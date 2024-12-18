@@ -1,0 +1,158 @@
+/* Corps du document */
+body {
+    background-color: black;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Poiret One', cursive;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Barre de navigation */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 1000; /* Assure que la navbar reste au-dessus */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    border-bottom: 1px solid #f69696; /* Bordure épaisse en bas de la barre de navigation */
+    font-size: 18px; /* Augmente la taille du texte */
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Permet aux liens de se développer et de prendre l'espace disponible */
+    text-align: center; /* Centre le texte à l'intérieur de chaque lien */
+}
+
+.nav-links li {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 20px 0;
+}
+
+.nav-links li a:hover {
+    color: #F87171; /* Rouge clair pour l'effet hover */
+}
+
+.portrait {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement si nécessaire */
+    width: 100%; /* Prend toute la largeur disponible */
+    margin-top: 3%; /* Ajuste l'espacement */
+    
+}
+
+.contact {
+    background-color: #F87171;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-right: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.contact:hover {
+    background-color: #ff4c4c;
+}
+
+.contact.active {
+    background-color: #e65c5c;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Section principale */
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 15px;
+    flex-grow: 1;
+    margin-top: 100px; /* Espace pour éviter la superposition avec la navbar */
+}
+
+/* Logo */
+.logo .image1 {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 5%;
+}
+
+/* Section présentation */
+.image2 {
+    width: 40%;
+    margin: -10px auto;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    gap: 20px; /* Ajoute un espace entre les éléments */}
+
+@media (min-width: 768px) {
+    .main-container {
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.text-container {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.presentation {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.presentation img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
