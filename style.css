@@ -1,158 +1,669 @@
-/* Corps du document */
-body {
-    background-color: black;
-    display: flex;
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Assure un calcul correct des tailles */
+    scroll-behavior: smooth;
+    scroll-padding: var(--scroll-padding, 5rem);
+}
+body {
+    background-color: #252121;
     color: white;
     font-size: 1rem;
-    font-family: 'Poiret One', cursive;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    font-family: 'Poiret One';
+    margin: 50px;
+}
+
+
+#accueil, #about, #projets, #competences, #contact, footer{
+    flex: 1 1 calc(33.333% - 16px); /* 3 colonnes */
+    min-width: 300px;
+    background-color: rgba(82, 80, 80, 0.936);
+    padding: 16px;
+}
+
+h1, h2, p {
+    margin: 0;
+    padding: 0;
 }
 
 /* Barre de navigation */
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: black;
-    z-index: 1000; /* Assure que la navbar reste au-dessus */
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
-
-.navbar {
+/* Header */
+.header {
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+   min-width: 300px;
+    z-index: 3;
+    padding: 10px 0;
+    position: sticky;
+    top: 0px;
+    background-color: #574a4a;
+}
+  
+.header .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    width: 100%;
-    border-bottom: 1px solid #f69696; /* Bordure épaisse en bas de la barre de navigation */
-    font-size: 18px; /* Augmente la taille du texte */
+    width: 80%;
+    margin: 0 auto;
 }
-
-
+ 
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+  
+/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
-    flex-grow: 1; /* Permet aux liens de se développer et de prendre l'espace disponible */
-    text-align: center; /* Centre le texte à l'intérieur de chaque lien */
+    flex-grow: 2;
+    justify-content: center;
 }
-
+  
 .nav-links li {
     flex: 1;
     text-align: center;
 }
-
+  
 .nav-links li a {
-    text-decoration: none;
     color: white;
-    transition: color 0.3s ease;
     display: block;
     padding: 20px 0;
+    transition: color 0.3s ease;
 }
-
+  
 .nav-links li a:hover {
-    color: #F87171; /* Rouge clair pour l'effet hover */
+    color: #f87171;
 }
-
-.portrait {
-    flex: 1;
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement si nécessaire */
-    width: 100%; /* Prend toute la largeur disponible */
-    margin-top: 3%; /* Ajuste l'espacement */
-    
-}
-
+  
+/* Contact Button */
 .contact {
-    background-color: #F87171;
     color: white;
-    text-decoration: none;
-    padding: 8px 16px;
+    font-size: 18px;
+    padding: 10px 20px;
     border-radius: 5px;
-    font-size: 16px;
-    text-transform: uppercase;
-    margin-right: 30px;
+    background-color: transparent;
     transition: background-color 0.3s ease;
 }
-
-.contact:hover {
-    background-color: #ff4c4c;
+ 
+  
+/* Menu Icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    align-self: center; /* Aligner verticalement au centre de la navbar */
+    position: relative; /* Position normale dans le flux */
 }
-
-.contact.active {
-    background-color: #e65c5c;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  
+.menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
 }
-
-/* Section principale */
-main {
-    display: flex;
+  
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
+    background: white;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+}
+  
+.menu-icon .navicon:before {
+    top: 5px;
+}
+  
+.menu-icon .navicon:after {
+    top: -5px;  
+}
+  
+/* Responsive Menu */
+  .menu-btn {
+    display: none;
+}
+  
+.menu-btn:checked ~ .nav-links {
     flex-direction: column;
-    padding: 50px 15px;
-    flex-grow: 1;
-    margin-top: 100px; /* Espace pour éviter la superposition avec la navbar */
+    max-height: 300px;
+    overflow: hidden;
+}
+  
+.menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+  
+.menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+  
+.menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+  
+.menu-btn:checked ~ .menu-icon .navicon:before,
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    top: 0;
+}
+  
+/* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .menu-icon {
+      display: block;
+      padding: 10px 20px;
+      margin-left: auto; /* Décale le bouton complètement à droite */
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      max-height: 0;
+      transition: max-height 0.3s ease-out;
+    }
+  
+    .menu-btn:checked ~ .nav-links {
+      display: flex;
+    }
+  
+    .nav-links li {
+      width: 100%;
+    }
+  
+    .nav-links li a {
+      padding: 15px 0;
+    }
+  
+    .contact {
+      display: block;
+      margin: 10px auto;
+      text-align: center;
+    }
+}
+  
+
+/* Section Accueil */
+.text-container{
+    align-items: center;
+    text-align: center;
+    font-size:40px;
 }
 
-/* Logo */
-.logo .image1 {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 5%;
-}
-
-/* Section présentation */
-.image2 {
-    width: 40%;
-    margin: -10px auto;
-}
-
-.main-container {
+#accueil{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    max-width: 1200px;
-    width: 100%;
-    padding: 20px;
-    gap: 20px; /* Ajoute un espace entre les éléments */}
+    padding: 160px;
+    bottom: 50px;
+}
+span{
+    font-size: 25px;
+}
+/* Media query pour les très petits écrans */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Réduction de la taille de la police pour très petits écrans */
+        padding: 10px;
+    }
 
-@media (min-width: 768px) {
-    .main-container {
-        flex-direction: row;
-        justify-content: center;
-        text-align: center;
+    span {
+        font-size: 0.9rem;
+        margin: 3px 0;
     }
 }
 
-.text-container {
-    flex: 1;
+
+
+/* Section À propos de moi */
+/* SECTION PRINCIPALE */
+#about {
+    display: flex; /* Aligne les blocs horizontalement */
+    flex-wrap: wrap; /* Permet aux blocs de passer à la ligne si nécessaire */
+    gap: 20px; /* Espacement entre les blocs */
     padding: 20px;
+    color: #252121;
+}
+  
+.frame1 .content {
+    display: flex;
+  }
+  
+  .frame1 .text {
+    flex: 1; /* Le texte prend plus de place si possible */
+    margin-right: 20px; /* Espace entre le texte et l'image */
+  }
+  
+
+.frame1,
+.frame2 {
+    flex: 1 1 45%; /* Les blocs prennent 45% de la largeur, et peuvent rétrécir */
+    padding: 20px;
+    background-color: #bc9c9c; /* Couleur différente pour le différencier */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(249, 65, 65, 0.1); /* Ombre subtile */
+}
+  
+.frame3 {
+    flex: 1 1 100%; /* Le bloc occupe toute la largeur */
+    padding: 24px;
+    background-color: #bc9c9c; /* Couleur différente pour le différencier */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+  
+.timeline::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: #5f5959;
+    left: 50%;
+    margin-left: -3px;
+}
+  
+.milestone {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+  
+.milestone::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: -17px;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 50%;
+    border: 4px solid #876e67;
+}
+  
+.milestone-left {
+    left: 0%;
+}
+  
+  .milestone-right {
+    left: 50%;
+}
+  
+.milestone-right::after {
+    left: -16px;
+}
+  
+.milestone-left::before {
+    content: "";
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    top: 22px;
+    right: 30px;
+    border: 10px solid #fff;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #fff;
+}
+  
+.milestone-right::before {
+    content: "";
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    top: 22px;
+    left: 30px;
+    border: 10px solid #fff;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+}
+  
+.event {
+    padding: 20px 30px;
+    background-color: #d2c2c2e0;
+    border-radius: 6px;
+
+}
+  
+/* Mobile version */
+  @media screen and (max-width: 350) {
+    #about {
+      flex-direction: column; /* Les blocs passent en colonne sur petits écrans */
+    }
+    
+    .frame1,
+    .frame2,
+    .frame3 {
+      flex: unset; /* Supprime la largeur automatique pour les petits écrans */
+    }
+  
+    .timeline::after {
+      left: 31px; /* Ajuste la barre pour les petits écrans */
+    }
+  
+    .milestone {
+      width: 100%; /* Les milestones occupent 100% de la largeur sur mobile */
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+    .milestone-left::before,
+    .milestone-right::before {
+      border-width: 10px 10px 10px 0;
+      border-color: transparent #fff transparent transparent;
+    }
+  
+    .milestone-left::after,
+    .milestone-right::after {
+      left: 15px;
+      z-index: 1;
+    }
+  
+    .milestone-right {
+      left: 0;
+    }
+}
+  
+
+
+/* Section Projets */
+.page_projet{
+    flex: 1 1 100%; /* Le bloc occupe toute la largeur */
+    padding: 20px;
+    background-color: #bc9c9c; /* Couleur différente pour le différencier */
+    border: 1px solid #e47a7a;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#projets .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 3vw;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+    min-width: 80vw;  
+    padding: 15px;
+}
+.page_projet h2{
+    text-align: center;
+    color: black;
+}
+
+#projets .image-container {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0s 0.3s;
+}
+
+#projets .image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    border: 4px solid #4a4444;
+}
+
+#projets .text {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    font-size: 1.5vw;
+    padding: 2vw;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#projets .image-container:hover .image {
+    transform: scale(1.1);
+}
+
+#projets .image-container:hover {
+    z-index: 10;
+}
+
+#projets .image-container:hover .text {
+    display: block;
+    opacity: 1;
+}
+
+/* Section Compétences */
+#competences .page_competence {
+    flex: 1 1 45%; /* Les blocs prennent 45% de la largeur, et peuvent rétrécir */
+    padding: 20px;
+    background-color: #bc9c9c; /* Couleur différente pour le différencier */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(249, 65, 65, 0.1); /* Ombre subtile */
+}
+
+#competences h2 {
+    margin-bottom: 30px;
+    color: #333;
+    align-items: center;
     text-align: center;
 }
 
-.presentation {
-    flex: 1;
-    padding: 20px;
+#competences .content {
+    max-width: 800px;
+    margin: 0 auto;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.presentation img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
+.progress-container {
+    text-align: left;
 }
+
+.progress-container h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress-bar span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 15px;
+    transition: width 1s ease-in-out;
+}
+
+/*contact*/
+#contact .page_contact{
+    flex: 1 1 45%; /* Les blocs prennent 45% de la largeur, et peuvent rétrécir */
+    padding: 20px;
+    background-color: #bc9c9c; /* Couleur différente pour le différencier */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(249, 65, 65, 0.1); /* Ombre subtile */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 100px;
+}
+  
+.container:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.contact-box {
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 30px;
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+}
+  
+.left {
+    background: url("image/image.png") no-repeat center;
+    background-size: cover;
+    height: 100%;
+    border-radius: 20px;
+}
+  
+.right {
+    padding: 25px 40px;
+}
+  
+h2 {
+    position: relative;
+    padding: 0 0 10px;
+    margin-bottom: 10px;
+}
+  
+h2:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #2ecc71;
+}
+  
+.field {
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    outline: none;
+    background-color: rgba(230, 230, 230, 0.6);
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+    transition: 0.3s;
+}
+  
+.field:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+  
+textarea {
+    min-height: 150px;
+}
+  
+.btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #2ecc71;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.btn:hover {
+    background-color: #27ae60;
+}
+  
+.field:focus {
+    border: 2px solid rgba(30, 85, 250, 0.47);
+    background-color: #8277777d;;
+}
+  
+@media screen and (max-width: 880px) {
+    .contact-box {
+      grid-template-columns: 1fr;
+    }
+    .left {
+      height: 200px;
+    }
+}
+  
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    display: flex;
+}
+  
+.footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+  
+.footer-container p {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+  
+.social-icons {
+    margin: 15px 0;
+}
+  
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+  
+.social-icons a:hover {
+    color: #4caf50;
+}
+  

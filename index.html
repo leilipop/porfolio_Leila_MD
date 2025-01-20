@@ -1,39 +1,305 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leila Moustapha Djanga</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <link rel="website icon" type="png" href="image/image-icon.png">
 </head>
+
 <body>
     <!-- Barre de navigation -->
+    <header class=" header">
+        <div class="navbar">
+            <!-- Logo -->
+            <a href="#accueil" class="logo" style="color: pink;">
+                LMD
+            </a>
+            <!-- Menu Burger -->
+            <input type="checkbox" id="menu-btn" class="menu-btn" />
+            <label for="menu-btn" class="menu-icon">
+                <span class="navicon"></span>
+            </label>
+            <!-- Liens de Navigation -->
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#about">À propos de moi</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#contact" class="contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
 
-    <div id="navbar"></div>
-        <!-- Contenu principal -->
-        <main>
-            
+    <!-- Section Accueil -->
+    <section id="accueil">
+        <div class="text-container">
+            <h1 style="padding: 25px; color: #f87171;">LEILA MOUSTAPHA DJANGA</h1>
+            <span>CHARGÉE DE COMMUNICATION</span>/
+            <span> DEVELLOPEUR WEB </span>/
+            <span>GRAPHISTE </span>
+        </div>
+    </section>
 
-            <div class="main-container"> 
-            <div class="text-container">
-                <h1> LEILA MOUSTAPHA DJANGA</h1>
-                <p> GRAPHISME / CHARGÉE DE COMMUNICATION </P>
+    <!-- Section À propos de moi -->
+    <section id="about">
+
+        <div class="frame1">
+            <h2 style="text-align: center;">Biographie</h2>
+            <div class="content">
+
+                <div class="text">
+                    Jeune étudiante passionnée par la communication digitale et les
+                    nouvelles technologies.
+                    </p>
+                </div>
             </div>
-            <div class="portrait">
-            <img src="image/image2.png" alt="image forme design rose" class="image2" />
+        </div>
+        </div>
 
+
+        <div class="frame2">
+            <h2 style="text-align: center;">Mes ambitions</h2>
+            <p>
+                Je souhaite m'investir dans des projets innovants pour accompagner les
+                marques dans leur transformation digitale et créer des campagnes
+                mémorables.
+            </p>
+        </div>
+
+        <div class="frame3">
+            <h2 style="text-align: center; padding-bottom: 15px;">Parcours scolaire</h2>
+            <div class="timeline">
+                <div class="milestone milestone-left">
+                    <div class="event">
+                        <h2 style="text-align: center;">2017</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Commodi, sunt magnam quaerat laboriosam, consequatur fugit alias
+                            nemo minima nulla aut eum rerum maiores. Id beatae vel
+                            assumenda. Quos, sed expedita. Consectetur, quasi. Recusandae,
+                            consequatur illum. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Sunt molestiae nam perspiciatis, pariatur in
+                            qui minus aperiam autem dignissimos eos.
+                        </p>
+                    </div>
+                </div>
+                <div class="milestone milestone-right">
+                    <div class="event">
+                        <h2 style="text-align: center;">2016</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+                            nobis nemo ex minus possimus. Magnam ullam tempore dolorum
+                            voluptatibus ex?
+                        </p>
+                    </div>
+                </div>
+                <div class="milestone milestone-left">
+                    <div class="event">
+                        <h2 style="text-align: center;">2015</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+                            nobis nemo ex minus possimus. Magnam ullam tempore dolorum
+                            voluptatibus ex?
+                        </p>
+                    </div>
+                </div>
+                <div class="milestone milestone-right">
+                    <div class="event">
+                        <h2 style="text-align: center;">2014</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+                            nobis nemo ex minus possimus. Magnam ullam tempore dolorum
+                            voluptatibus ex?
+                        </p>
+                    </div>
+                </div>
+                <div class="milestone milestone-left">
+                    <div class="event">
+                        <h2 style="text-align: center;">2013</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+                            nobis nemo ex minus possimus. Magnam ullam tempore dolorum
+                            voluptatibus ex?
+                        </p>
+                    </div>
+                </div>
             </div>
+            <!-- Clôture de la timeline -->
+        </div>
+        <!-- Clôture de frame3 -->
+    </section>
+    <!-- Clôture de la section -->
+
+
+
+
+    <!-- Section Projets -->
+    <section id="projets">
+        <div class="page_projet">
+            <h2>Mes Projets</h2>
+
+            <div class="gallery">
+                <div class="image-container">
+                    <img src="https://st2.depositphotos.com/15934180/50773/v/450/depositphotos_507730816-stock-illustration-beautiful-girl-portrait-cartoon-style.jpg"
+                        alt="Image 1" class="image" />
+                    <p class="text">
+                        Description de l'image 1
+                    </p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://st2.depositphotos.com/15934180/50773/v/450/depositphotos_507730816-stock-illustration-beautiful-girl-portrait-cartoon-style.jpg"
+                        alt="Image 2" class="image" />
+                    <p class="text">Description de l'image 2.</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://st2.depositphotos.com/15934180/50773/v/450/depositphotos_507730816-stock-illustration-beautiful-girl-portrait-cartoon-style.jpg"
+                        alt="Image 2" class="image" />
+                    <p class="text">Description de l'image 3.</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://st2.depositphotos.com/15934180/50773/v/450/depositphotos_507730816-stock-illustration-beautiful-girl-portrait-cartoon-style.jpg"
+                        alt="Image 2" class="image" />
+                    <p class="text">Description de l'image 4.</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://st2.depositphotos.com/15934180/50773/v/450/depositphotos_507730816-stock-illustration-beautiful-girl-portrait-cartoon-style.jpg"
+                        alt="Image 2" class="image" />
+                    <p class="text">Description de l'image 5.</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://st2.depositphotos.com/15934180/50773/v/450/depositphotos_507730816-stock-illustration-beautiful-girl-portrait-cartoon-style.jpg"
+                        alt="Image 2" class="image" />
+                    <p class="text">Description de l'image 6.</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://st2.depositphotos.com/15934180/50773/v/450/depositphotos_507730816-stock-illustration-beautiful-girl-portrait-cartoon-style.jpg"
+                        alt="Image 2" class="image" />
+                    <p class="text">Description de l'image 7.</p>
+                </div>
+                <div class="image-container">
+                    <img src="https://st2.depositphotos.com/15934180/50773/v/450/depositphotos_507730816-stock-illustration-beautiful-girl-portrait-cartoon-style.jpg"
+                        alt="Image 2" class="image" />
+                    <p class="text">Description de l'image 8.</p>
+                </div>
+
+                <!-- Ajoutez d'autres images ici -->
             </div>
-            <script src="navbar/navbar-loader.js"></script> <!-- Script JS pour générer la navbar -->
+        </div>
 
 
-        </main>  
 
 
+
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="competences">
+        <div class="page_competence">
+            <h2>Mes Compétences</h2>
+            <div class="content">
+                <div class="progress-container">
+                    <h4>HTML</h4>
+                    <div class="progress-bar" aria-label="HTML compétence">
+                        <span data-width="90%">90%</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <h4>CSS</h4>
+                    <div class="progress-bar" aria-label="CSS compétence">
+                        <span data-width="70%">70%</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <h4>word</h4>
+                    <div class="progress-bar" aria-label="JavaScript compétence">
+                        <span data-width="100%">100%</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <h4>illustrator</h4>
+                    <div class="progress-bar" aria-label="BootStrap compétence">
+                        <span data-width="70%">70%</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <h4>Photoshop</h4>
+                    <div class="progress-bar" aria-label="BootStrap compétence">
+                        <span data-width="60%">60%</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <h4>Premiére Pro</h4>
+                    <div class="progress-bar" aria-label="BootStrap compétence">
+                        <span data-width="50%">50%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact">
+        <div class="page_contact">
+            <div class="container">
+                <div class="contact-box">
+                    <div class="left"></div>
+                    <div class="right">
+                        <h2>Contactez moi</h2>
+                        <input type="text" class="field" placeholder="Nom" required />
+                        <input type="text" class="field" placeholder="Email" required />
+                        <input type="text" class="field" placeholder="N° téléphone" required />
+                        <textarea placeholder="Votre message" class="field" required></textarea>
+                        <button class="btn">Envoyé</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressSpans = document.querySelectorAll(".progress-bar span");
+            progressSpans.forEach(span => {
+                const width = span.getAttribute("data-width");
+                span.style.width = width;
+            });
+        });
+    </script>
+</body>
 <footer>
-
+    <div class="footer-container">
+        <p><a href="mailto:hege@example.com">Leilamoustaphadjanga@gmail.com</a></p>
+        <a href="Cv_test.pdf" download >Cv à télécharger</a>
+        <p>Suivez-moi sur les réseaux sociaux :</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 MOUSTAPHA DJanga Leila. Tous droits réservés.</p>
+    </div>
 </footer>
 
-</body>
 </html>
